@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>IR</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link href="/static/stylesheets/index.css" rel="stylesheet">
+</head>
+<body>
+	<div class="box-area">
+		<header>
+			<div class="wrapper">
+				<nav>
+					<a href="/">home</a> <a href="/info">Info</a><a href="/about">about</a>
+				</nav>
+			</div>
+		</header>
+		<div class="banner-area">
+			
+                <h4 align-center>Content based Image Retrieval System</h4>
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="file" name="query_img"><br>
+                    <input type="submit">
+                </form>
+                <h2>Query:</h2>
+                {% if query_path %}
+                <img src="{{ query_path }}" width="300px">
+                {% endif %}
+                <h2>Results:</h2>
+                {% for score in scores %}
+                <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                    <img src="{{ score[1] }}" height="200px">
+                    <figcaption>{{ score[0] }}</figcaption>
+                </figure>
+                {% endfor %}
+            
+		</div>
+		<!-- <div class="content-area">
+			<div class="wrapper">
+				<h2>What is it?</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, esse est iste magni reprehenderit saepe sint! Assumenda consectetur fugit sit tempore. Architecto blanditiis deleniti, est fuga iusto perspiciatis suscipit voluptatibus! Ad alias assumenda autem deleniti esse est excepturi hic itaque, magnam magni nam officia provident quae recusandae reiciendis rem sed. Adipisci animi aut autem deserunt dolore, ea eius error ex facilis inventore ipsum minus modi nihil nostrum nulla, obcaecati porro reprehenderit repudiandae sed sint sunt tempore vero. At dolores doloribus, dolorum ea eaque hic ipsa iusto libero minus natus neque nisi nobis nostrum odio optio pariatur perspiciatis praesentium rerum sapiente.</p>
+			</div>
+		</div> -->
+	</div>
+</body>
+</html>
+
+<!-- <!doctype html>
+<html>
+    <head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></head>
+    <body>
+        <div class="container">
+            <h1>Information Retrieval Project</h1><br>
+            <h2 align-center>Content based Image Retrieval System</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="query_img"><br>
+                <input type="submit">
+            </form>
+            <h2>Query:</h2>
+            {% if query_path %}
+            <img src="{{ query_path }}" width="300px">
+            {% endif %}
+            <h2>Results:</h2>
+            {% for score in scores %}
+            <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+                <img src="{{ score[1] }}" height="200px">
+                <figcaption>{{ score[0] }}</figcaption>
+            </figure>
+            {% endfor %}
+        </div>
+    </body>
+</html>
+
+ -->
